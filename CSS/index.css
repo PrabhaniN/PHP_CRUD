@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    height: 80px;
+    width: 1920px;
+    /* background-color: #007FFF; */
+}
+
+h1 {
+    text-align: left;
+    padding: 50px;
+    /* color: white; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 300%;
+}
+
+nav {
+    /* background-color: #007FFF; */
+    width: 240px;
+    /* height: 900px; */
+    padding: 50px;
+}
+
+li {
+    padding: 10px;
+}
+
+button {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    font-size: 120%;
+    font-family: 'Courier New', Courier, monospace
+}
