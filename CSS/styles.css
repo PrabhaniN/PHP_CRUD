@@ -84,13 +84,13 @@ label {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.submit-btn, .search-btn, .edit-btn, .delete-btn {
+.submit-btn, .search-btn, .edit-btn, .delete-btn, .update-btn {
     border-style: solid;
     border-color: #0047AB;
     text-align: center;
 }
 
-.submit-btn {
+.submit-btn, .update-btn {
     margin-top: 3%;
     margin-left: 89%;
 }
