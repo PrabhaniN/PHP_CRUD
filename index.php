@@ -1,3 +1,7 @@
+<?php
+include_once 'conn.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,13 +12,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../CSS/styles.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
         <header>
             <h1>
-                <a href="index.html">Stock Details</a>
+                <a href="index.php">Stock Details</a>
             </h1>
         </header>
         <div class="row">
@@ -22,7 +26,7 @@
                 <nav>
                     <ul style="list-style-type:none;" class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <button>Marterial Details</button>
                             </a>
                         </li>
@@ -32,7 +36,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="update_stock.html">
+                            <a class="nav-link" href="update_stock.php">
                                 <button>Update Stock</button>
                             </a>
                         </li>
@@ -48,13 +52,30 @@
                         <th>Available Quantity</th>
                         <th>Price(per meter)</th>
                     </tr>
+
+                    <?php
+                    $sql = "SELECT * FROM materials";
+                    $result = $conn->query($sql);
+
+                    if($result->num_rows > 0){
+                        while ($row = $result->fetch_assoc()){
+                            
+                    ?>
+
                     <tr>
-                        <td>8180987656</td>
-                        <td>Cotton</td>
-                        <td>5</td>
-                        <td>2576</td>
-                        <td>175.00</td>
+                        <td><?php echo $row['mat_code']; ?></td>
+                        <td><?php echo $row['mat_name']; ?></td>
+                        <td><?php echo $row['no_of_colors']; ?></td>
+                        <td><?php echo $row['quantity']; ?></td>
+                        <td><?php echo $row['price']; ?></td>
                     </tr>
+
+                    <?php 
+                        }
+                    }
+
+                    $conn->close();
+                    ?>
                 </table>
             </div>
         </div>
