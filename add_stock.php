@@ -9,8 +9,8 @@ $price = $_POST['price'];
 
 $sql = "INSERT INTO materials(mat_code, mat_name, no_of_colors, quantity, price) VALUES ('$mat_code', '$mat_name', '$no_of_colors', '$quantity', '$price')";
 
-if ($conn->query($sql) === TRUE){
-    echo "New record added";
+if ($conn->query($sql) === TRUE){ // check whether the sql query is true
+    // echo "New record added";
     header('Location:index.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -18,3 +18,4 @@ if ($conn->query($sql) === TRUE){
 
 $conn->close();
 ?>
+<!-- created connection with database to add data -->

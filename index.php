@@ -61,6 +61,7 @@ include_once 'conn.php';
                         while ($row = $result->fetch_assoc()){
                             
                     ?>
+                    <!-- get details from the materials tables and display in the table in index.php page by assigning a row by row in the database to the $row variable -->
 
                     <tr>
                         <td><?php echo $row['mat_code']; ?></td>

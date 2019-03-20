@@ -4,6 +4,7 @@ include_once 'conn.php';
 if (isset($_GET['edit_id'])){
   $edit_id = $_GET['edit_id'];
 ?>
+<!-- check for the get request's id to rest of the code to be executed -->
 
 
 <!DOCTYPE html>
@@ -58,6 +59,7 @@ if (isset($_GET['edit_id'])){
         $row = $result->fetch_assoc();
     
     ?>
+    <!-- check the id and get rest of the details under the given id -->
 
       <form action="edit_handler.php" method="post">
         <div class="inputs">
@@ -80,6 +82,7 @@ if (isset($_GET['edit_id'])){
           <p>Price (per meter)</p>
           <input type="number" name="price" class="form-control form-control-lg" placeholder="Ex: 175.00" value="<?php echo $row['price'] ?>">
         </div>
+        <!-- created a post request to show the details of the given material code -->
         <button class="update-btn">Update</button>
       </form>
 
@@ -98,4 +101,5 @@ if (isset($_GET['edit_id'])){
 } else {
   echo "No material code found!";
 }
+// error message if the inserted material code does not exist in the database
 ?>

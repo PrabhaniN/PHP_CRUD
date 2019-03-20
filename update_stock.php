@@ -7,6 +7,7 @@ if (isset($_GET['delete_id'])){
   header('Location:index.php');
 }
 ?>
+<!-- chech for the material code to be deleted and created the sql query to delete the file -->
 
 <!DOCTYPE html>
 <html>
@@ -67,7 +68,7 @@ if (isset($_GET['delete_id'])){
 
       <?php 
       if(isset($_GET['update_id'])){
-        $update_id = $_GET['update_id'];
+        $update_id = $_GET['update_id']; //get the id from search bar
     
         $sql = "SELECT * FROM materials WHERE mat_code=$update_id";
         $result = $conn->query($sql);
@@ -75,6 +76,7 @@ if (isset($_GET['delete_id'])){
         if($result->num_rows > 0){
           $row = $result->fetch_assoc();
       ?>
+      <!-- get details of the material code and display -->
 
       <table class="table">
         <tr>
@@ -94,8 +96,8 @@ if (isset($_GET['delete_id'])){
         </tr>
       </table>
       <div class="d-flex justify-content-end mb-2">
-        <button class="edit-btn" onclick="location.href='edit_stock.php?edit_id='+<?php echo $update_id?>">Edit</button>
-        <button class="delete-btn" onclick="location.href='update_stock.php?delete_id='+<?php echo $update_id?>">Delete</button>
+        <button class="edit-btn" onclick="location.href='edit_stock.php?edit_id='+<?php echo $update_id?>">Edit</button> <!-- locate to the edit_stock.php page -->
+        <button class="delete-btn" onclick="location.href='update_stock.php?delete_id='+<?php echo $update_id?>">Delete</button> <!-- locate to the update_stock.php page to delete the data -->
       </div>
 
           <?php 
