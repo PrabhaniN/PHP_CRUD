@@ -80,7 +80,7 @@ if (isset($_GET['edit_id'])){
         </div>
         <div class="inputs">
           <p>Price (per meter)</p>
-          <input type="number" name="price" class="form-control form-control-lg" placeholder="Ex: 175.00" value="<?php echo $row['price'] ?>">
+          <input type="number" name="price" class="form-control form-control-lg" placeholder="Ex: 175" value="<?php echo $row['price'] ?>">
         </div>
         <!-- created a post request to show the details of the given material code -->
         <button class="update-btn">Update</button>
