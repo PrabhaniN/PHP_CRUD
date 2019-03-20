@@ -1,6 +1,8 @@
 <?php
 include_once 'conn.php';
 
+// created connection with database to add data
+
 $mat_name = $_POST['mat-name'];
 $mat_code = $_POST['mat-code'];
 $no_of_colors = $_POST['no-of-colours'];
@@ -18,4 +20,3 @@ if ($conn->query($sql) === TRUE){ // check whether the sql query is true
 
 $conn->close();
 ?>
-<!-- created connection with database to add data -->
